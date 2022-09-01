@@ -1,4 +1,4 @@
-package com.example.course;
+package com.example.electronic;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,20 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="electronics device")
+@Table(name="electronics_device")
 public class Electronics {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private String category;
-	private String price;
+	private Integer price;
 	
 	public Electronics() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Electronics(int id, String name, String category,String price) {
+	public Electronics(int id, String name, String category,int price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,11 +45,11 @@ public class Electronics {
 	public void setcategory(String category) {
 		this.category = category;
 	}
-	public String getprice() {
+	public Integer getprice() {
 		return price;
 	}
-	public void setprice(String price) {
-		this.category = price;
+	public void setprice(int price) {
+		this.price= price;
 	}
 	@Override
 	public String toString() {
